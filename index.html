@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <script src="https://kit.fontawesome.com/5fdd32f0ec.js" crossorigin="anonymous"></script>
+        <title>Copiar</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+      body {
+        font-family: 'Varela Round', sans-serif;
+        z-index: 0 auto;
+        background: #BF264F;
+        color: white;
+        margin: 50px;
+   
+      }
+      i:hover {
+        color: lightgreen;
+      }
+      a {
+        border: 1px solid #cecece;
+        padding: 10px;
+        border-radius: 20px;
+        
+      }
+      input {
+        background: transparent;
+        border-radius: 20px;
+        border: 1px solid #cecece;
+        padding: 15px;
+        width: 100%;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+     <h1>Botão de copiar</h1>
+    
+    <a id="copiar" data="Dados"><i class="fa-regular fa-copy fa-xl"></i> Copiar texto</a> 
+    <br></br>
+    
+    <input type="text" placeholder="Você pode testar colando aqui :) " >
+  <script type="text/javascript" >
+    const copiaElementos = document.getElementById("copiar");
+    for (var i = 0; i < copiaElementos.length; i++) {
+      copiaElementos[i].onclick = copyToClipboard
+    }
+
+    function copyToClipboard(event) {
+      var cop = document.createElement("input");
+      document.querySelector("body").appendChild(cop)
+      cop.value = event.target.attributes["data"].value
+      cop.select()
+      document.execCommand("copy")
+      cop.remove()
+    }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <input id="text" value=öie"> 
+    <button id="copy">Copy</button>
+    <script src="script.js">
+      
+    </script>
+  </body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+      <script src="https://kit.fontawesome.com/5fdd32f0ec.js" crossorigin="anonymous"></script>
+        <title>clickToCopy sample</title>
+    </head>
+    <body>
+
+        <h1>Click To Copy - Demo</h1>
+        <p>Click on an element below to copy its data attribute value to the clipboard.</p>
+        <hr>
+      
+        <h2 class="click-to-copy" data="first>smethin</h2>        
+        <br>
+        <p>You can paste here to test if the copy worked:</p>
+        <input type="text" name="" value="">
+
+        <script type="text/javascript">
+            // Attach onclick event to all the element with "click-to-copy" class
+            const clickToCopyElements=document.querySelectorAll(".click-to-copy")
+            for (var e=0; e < clickToCopyElements.length; e++) {
+                clickToCopyElements[e].onclick = copyToClipboard
+            }
+
+            // The clickToClipboard function copies the clicked element data property
+            // payload to the clipboard and shows a visual feedback
+            function copyToClipboard(event) {
+                var clip = document.createElement("input");
+                document.querySelector("body").appendChild(clip)
+                clip.value = event.target.attributes["data"].value
+                clip.select()
+                document.execCommand("copy")
+                clip.remove()
+
+            };
+       
+
+        </script>
+    </body>
+</html>
